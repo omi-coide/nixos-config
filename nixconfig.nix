@@ -18,7 +18,7 @@
       trusted-public-keys = [
         "rewine.cachix.org-1:aOIg9PvwuSefg59gVXXxGIInHQI9fMpskdyya2xO+7I="
       ];
-      trusted-users = [ "root" "rewine" ];
+      trusted-users = [ "root" "rewine" "yly"];
     };
 
     gc = {

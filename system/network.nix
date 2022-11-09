@@ -1,17 +1,13 @@
 { ... }:
 
 {
-  networking.hostName = "nixos"; # Define your hostname.
-
-  # Enables wireless support via wpa_supplica>
-  # networking.wireless.enable = true; 
+  networking.hostName = "yly-arch"; # Define your hostname.
 
   networking.networkmanager.enable = true;
 
   # use nmcil/nmtui to manager network 
   programs.nm-applet.enable = true;
 
-  networking.interfaces.wlp2s0.useDHCP = true;
   networking.iproute2.enable = true;
 
   # Configure network proxy

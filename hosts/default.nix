@@ -18,9 +18,7 @@ let
         imports = [
           nixos-cn.nixosModules.nixos-cn-registries
           nixos-cn.nixosModules.nixos-cn
-          rew.nixosModules.v2raya
         ];
-        config.services.v2raya.enable = true;
     })
 
   ] ++ (with inputs;[
@@ -31,9 +29,9 @@ let
 
 in
 {
-  xiaomi = nixosSystem {
+  yly-arch = nixosSystem {
     inherit system;
     specialArgs = { inherit inputs system; };
-    modules = (import ./xiaomi) ++ sharedModules;
+    modules = (import ./yly-arch ) ++ sharedModules;
   };
 }

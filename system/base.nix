@@ -5,14 +5,12 @@
   time.timeZone = "Asia/Shanghai";
 
   #networking.hostId = "71452b6e"; # for zfs pool
-  boot.supportedFilesystems = [ "xfs" "btrfs" "ntfs" ];
 
   # Enable CUPS to print documents.
   # services.printing.enable = true;
 
   # Enable sound.
   sound.enable = true;
-  hardware.pulseaudio.enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
   services.xserver.libinput.enable = true;
@@ -26,11 +24,6 @@
     font = "Lat2-Terminus16";
     keyMap = "us";
   };
-
-  # Enable Flatpak
-  xdg.portal.enable = true;
-  services.flatpak.enable = true;
-  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;

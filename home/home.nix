@@ -20,15 +20,17 @@
     pstree
     cloc
     colorpicker
-
+    rustdesk
     # nix tools
     nix-index
     nix-update
     # other apps
-    nodejs
-    nodePackages.npm
-    yarn
-    hugo
+    # nodejs
+    # nodePackages.npm
+    # yarn
+    # hugo
+    v2ray
+    screen
     cachix
     (writeShellScriptBin "et" "${config.programs.emacs.package}/bin/emacs -nw $@")
     #inputs.taffybar.defaultPackage.${system}
