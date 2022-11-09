@@ -6,7 +6,7 @@ in
   home-manager = {
     useGlobalPkgs = true;
     # useUserPackages = true;
-    users.rewine = {
+    users.yly = {
       imports = [
         homeProfile
       ];

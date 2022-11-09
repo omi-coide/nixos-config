@@ -1,23 +1,13 @@
 { inputs, system, config, pkgs, ... }:
-let
-  polybarPkgs = with pkgs; [
-    font-awesome          # awesome fonts
-    material-design-icons # fonts with glyphs
-    xfce.orage            # lightweight calendar
-  ];
-in
 {
-  imports = [
-    ./polybar
-  ];
   services.trayer.enable = true;
 
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
-  home.username = "rewine";
-  home.homeDirectory = "/home/rewine";
+  home.username = "yly";
+  home.homeDirectory = "/home/yly";
 
-  home.packages =  polybarPkgs ++ (with pkgs; [
+  home.packages =  (with pkgs; [
     # unix tools
     htop
     ugrep
@@ -44,21 +34,12 @@ in
     #inputs.taffybar.defaultPackage.${system}
   ]);
 
-  #services.taffybar = {
-  #  enable = true;
-  #  package = inputs.taffybar.defaultPackage.${system};
-  #};
-
   programs.git = {
     enable = true;
-    userName = "rewine";
-    userEmail = "lhongxu@outlook.com";
+    # userName = "rewine";
+    # userEmail = "lhongxu@outlook.com";
     delta.enable = true;
     lfs.enable = false;
-    signing = {
-      key = "0xAABB329787290824";
-      signByDefault = true;
-    };
     aliases = {
       co = "checkout";
       ci = "commit";
@@ -71,7 +52,7 @@ in
       d = "diff";
     };
     extraConfig = {
-      init.defaultBranch = "main";
+      init.defaultBranch = "master";
       push.autoSetupRemote = true;
       core.compression = 0;
       http.postBuffer = 1048576000;
