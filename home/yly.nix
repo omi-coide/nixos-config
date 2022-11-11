@@ -34,6 +34,8 @@
     (writeShellScriptBin "et" "${config.programs.emacs.package}/bin/emacs -nw $@")
     wayfire
     firefox
+    glxinfo
+    wayland-utils
   ]);
 
   programs.git = {
