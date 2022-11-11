@@ -59,11 +59,23 @@
       push.autoSetupRemote = true;
       core.compression = 0;
       http.postBuffer = 1048576000;
+      http.proxy ="http://127.0.0.1:12333";
       protocol."https".allow = "always";
       url."https://github.com/".insteadOf = [ "gh:" "github:" ];
     };
   };
-
+  programs.zsh.enable = true;
+  programs.zsh.enableSyntaxHighlighting = true;
+  programs.zsh = {
+    oh-my-zsh = {
+      enable=true;
+      plugins=["git" "extract"  "sudo" "dirhistory"  "per-directory-history"];
+      theme = "ys";
+    };
+    history = {
+      size = 1000000;
+    };
+  };
   programs = {
     neovim = {
       enable = true;
