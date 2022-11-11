@@ -21,6 +21,7 @@
     fonts = with pkgs; [
       hack-font
       source-han-sans
+      source-code-pro
       noto-fonts
       noto-fonts-cjk
       noto-fonts-emoji
