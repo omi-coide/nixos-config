@@ -20,7 +20,6 @@
     pstree
     cloc
     colorpicker
-    rustdesk
     # nix tools
     sqlite-interactive
     nix-index
@@ -32,7 +31,6 @@
     # hugo
     v2ray
     screen
-    cachix
     (writeShellScriptBin "et" "${config.programs.emacs.package}/bin/emacs -nw $@")
     #inputs.taffybar.defaultPackage.${system}
   ]);

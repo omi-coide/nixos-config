@@ -12,13 +12,15 @@
       };
       defaultFonts.emoji = [ "Noto Color Emoji" ];
       defaultFonts.monospace = [ "Hack" ];
-      defaultFonts.sansSerif = [ "DejaVu Sans" ];
-      defaultFonts.serif = [ "DejaVu Serif" ];
+      defaultFonts.sansSerif = [ "Source Han Sans" ];
+      defaultFonts.serif = [ "Source Han Serif" ];
     };
 
     fontDir.enable = true;
     enableGhostscriptFonts = true;
     fonts = with pkgs; [
+      hack-font
+      source-han-sans
       noto-fonts
       noto-fonts-cjk
       noto-fonts-emoji
