@@ -22,6 +22,7 @@
     colorpicker
     rustdesk
     # nix tools
+    sqlite-interactive
     nix-index
     nix-update
     # other apps
