@@ -6,12 +6,6 @@ let
   sharedModules = [
     ../nixconfig.nix
     ../users.nix
-    {
-      environment.systemPackages = [
-        #inputs.agenix.defaultPackage.x86_64-linux
-        #inputs.taffybar.defaultPackage.${system}
-      ];
-    }
     { nixpkgs.overlays = [ nur.overlay ]; }
     { nixpkgs.config.permittedInsecurePackages = [ "electron-9.4.4" ]; }
     ({ pkgs, config, ... }: {
@@ -23,7 +17,6 @@ let
 
   ] ++ (with inputs;[
     # agenix.nixosModule
-    grub2-themes.nixosModule
     home-manager.nixosModules.home-manager
   ]) ++ (import ../modules );
 

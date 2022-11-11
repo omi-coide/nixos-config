@@ -1,4 +1,3 @@
 [
-  ./betterlockscreen
   ./notify
 ]
