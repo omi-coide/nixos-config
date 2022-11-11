@@ -32,7 +32,7 @@
     v2ray
     screen
     (writeShellScriptBin "et" "${config.programs.emacs.package}/bin/emacs -nw $@")
-    #inputs.taffybar.defaultPackage.${system}
+    wayfire
   ]);
 
   programs.git = {

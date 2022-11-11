@@ -15,7 +15,7 @@
 
       displayManager = {
         sddm.enable = true;
-        defaultSession = "plma";
+        defaultSession = "plasmawayland";
       };
 
       ### kde plasma
