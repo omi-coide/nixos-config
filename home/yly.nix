@@ -33,6 +33,7 @@
     screen
     (writeShellScriptBin "et" "${config.programs.emacs.package}/bin/emacs -nw $@")
     wayfire
+    firefox
   ]);
 
   programs.git = {
