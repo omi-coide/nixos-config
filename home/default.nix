@@ -1,6 +1,6 @@
 { inputs, system, ... }:
 let
-  homeProfile = ./home.nix;
+  ylyHomeProfile = ./yly.nix;
 in
 {
   home-manager = {
@@ -8,7 +8,7 @@ in
     # useUserPackages = true;
     users.yly = {
       imports = [
-        homeProfile
+        ylyHomeProfile
       ];
     };
     extraSpecialArgs = { inherit inputs system; };
