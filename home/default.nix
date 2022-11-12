@@ -1,16 +1,11 @@
 { inputs, system, ... }:
-let
-  ylyHomeProfile = ./yly.nix;
-in
 {
   home-manager = {
     useGlobalPkgs = true;
     # useUserPackages = true;
-    users.yly = {
-      imports = [
-        ylyHomeProfile
-      ];
-    };
+    users.yly = {imports = [ ./yly.nix ];};
+    users.leylee = {imports = [ ./leylee.nix ];};
+    users.billchenchina = {imports = [ ./billchenchina.nix ];};
     extraSpecialArgs = { inherit inputs system; };
   };
 }
