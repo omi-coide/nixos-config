@@ -17,6 +17,8 @@ let
     nixpkgs-fmt
     nixpkgs-lint
     nixpkgs-review
+    nix-index
+    nix-ld
     nixpkgs-pytools
     nix-du
     manix
@@ -63,7 +65,7 @@ in
       unrar
       pamixer # 音量控制
       scrot
-      
+      pipewire
       xorg.xmodmap
       termonad
 

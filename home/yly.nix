@@ -36,6 +36,12 @@
     firefox
     glxinfo
     wayland-utils
+    krfb
+    tigervnc
+    steam-run
+    nix-ld
+    vscode
+    appimage-run
   ]);
 
   programs.git = {
