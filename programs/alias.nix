@@ -2,7 +2,7 @@
 
 {
   environment.shellAliases = {
-    ls = "exa --icons";
+    ls = "exa";
     l = "exa -l";
     ll = "exa -al";
     la = "exa -a";
@@ -15,6 +15,7 @@
 
     nix-zsh = "nix-shell --run zsh";
     buildos = "sudo nixos-rebuild switch";
+    reload= "sudo nixos-rebuild switch";
 
     sgaa = "sudo git add";
     sgc = "sudo git commit";

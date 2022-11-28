@@ -1,13 +1,9 @@
 { inputs, system, config, pkgs, ... }:
-{
-  services.trayer.enable = true;
+let
+  games = [pkgs.zeroad ];
+  mma = pkgs.callPackage ../pkgs/homemade/mathematica/default.nix {version = "13.1.0"; lang = "cn";};
 
-  # Home Manager needs a bit of information about you and the
-  # paths it should manage.
-  home.username = "yly";
-  home.homeDirectory = "/home/yly";
-
-  home.packages =  (with pkgs; [
+  utils = (with pkgs; [
     # unix tools
     htop
     ugrep
@@ -40,9 +36,34 @@
     tigervnc
     steam-run
     nix-ld
+    tdesktop
     vscode
     appimage-run
+    remmina
+
+
+    ### begin auto insert package ###
+
+    mma
+    briss
+    imagemagick
+    coq
+    rclone
+    freerdp
+    xrdp
+    rlwrap
   ]);
+in
+{
+  services.trayer.enable = true;
+
+  # Home Manager needs a bit of information about you and the
+  # paths it should manage.
+  home.username = "yly";
+  home.homeDirectory = "/home/yly";
+
+  home.packages = games ++ utils;
+
 
   programs.git = {
     enable = true;
@@ -66,7 +87,7 @@
       push.autoSetupRemote = true;
       core.compression = 0;
       http.postBuffer = 1048576000;
-      http.proxy ="http://127.0.0.1:12333";
+      http.proxy = "http://127.0.0.1:12333";
       protocol."https".allow = "always";
       url."https://github.com/".insteadOf = [ "gh:" "github:" ];
     };
@@ -75,8 +96,8 @@
   programs.zsh.enableSyntaxHighlighting = true;
   programs.zsh = {
     oh-my-zsh = {
-      enable=true;
-      plugins=["git" "extract"  "sudo" "dirhistory"  "per-directory-history"];
+      enable = true;
+      plugins = [ "git" "extract" "sudo" "dirhistory" "per-directory-history" ];
       theme = "ys";
     };
     history = {
