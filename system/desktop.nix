@@ -2,11 +2,19 @@
 
 {
   qt5 = {
-    #  enable = true;
+    enable = true;
     #  style = "adwaita";
     #  platformTheme = "gnome";
   };
-  #programs.qt5ct.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+    # If you want to use JACK applications, uncomment this
+    jack.enable = true;
+  };
+  programs.qt5ct.enable = true;
   services.notify-daemon.enable = true;
 
   services = {
