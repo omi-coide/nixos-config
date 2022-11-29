@@ -4,7 +4,7 @@
   qt5 = {
     enable = true;
     #  style = "adwaita";
-    #  platformTheme = "gnome";
+    platformTheme = "qt5ct";
   };
   services.pipewire = {
     enable = true;
@@ -25,9 +25,6 @@
         sddm.enable = true;
         defaultSession = "plasma";
       };
-
-      ### kde plasma
-      desktopManager.plasma5.enable = true;
 
     };
   };
