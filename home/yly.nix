@@ -44,6 +44,7 @@ let
 
     ### begin auto insert package ###
 
+    rclone-browser
     mma
     briss
     imagemagick
