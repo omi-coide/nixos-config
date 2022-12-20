@@ -27,7 +27,7 @@ let
     # hugo
     v2ray
     screen
-    (writeShellScriptBin "et" "${config.programs.emacs.package}/bin/emacs -nw $@")
+    # (writeShellScriptBin "et" "${config.programs.emacs.package}/bin/emacs -nw $@")
     wayfire
     firefox
     glxinfo
@@ -43,7 +43,16 @@ let
 
 
     ### begin auto insert package ###
-
+    vlc
+    audacity
+    python3
+    (hiPrio wpsoffice)
+    quartus-prime-lite
+    
+    usbutils
+    novnc
+    killall
+    qbittorrent
     rclone-browser
     mma
     briss
@@ -122,6 +131,8 @@ in
       ];
       extraConfig = ''
         set whichwrap+=<,>,[,],h,l
+        set tabstop=4
+        set shiftwidth=4
       '';
     };
   };

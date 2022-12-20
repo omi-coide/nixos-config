@@ -14,7 +14,6 @@
     # If you want to use JACK applications, uncomment this
     jack.enable = true;
   };
-  programs.qt5ct.enable = true;
   services.notify-daemon.enable = true;
 
   services = {
@@ -25,6 +24,9 @@
         sddm.enable = true;
         defaultSession = "plasma";
       };
+
+      ### kde plasma
+      desktopManager.plasma5.enable = true;
 
     };
   };
