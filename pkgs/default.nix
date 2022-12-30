@@ -35,7 +35,6 @@ let
     ghostwriter
     flameshot
     # Browser
-    vimb
   ];
 
   modern-unix = with pkgs; [
