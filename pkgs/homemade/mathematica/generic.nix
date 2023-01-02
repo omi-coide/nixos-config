@@ -6,13 +6,13 @@
 , runCommand
 , stdenv
 , symlinkJoin
-# arguments from default.nix
+  # arguments from default.nix
 , lang
 , meta
 , name
 , src
 , version
-# dependencies
+  # dependencies
 , alsa-lib
 , cudaPackages
 , cups
@@ -46,22 +46,29 @@
 , xkeyboard_config
 , xorg
 , zlib
-# options
+  # options
 , cudaSupport
 }:
 
-let cudaEnv = symlinkJoin {
-      name = "mathematica-cuda-env";
-      paths = with cudaPackages; [
-        cuda_cudart cuda_nvcc libcublas libcufft libcurand libcusparse
-      ];
-      postBuild = ''
-        ln -s ${addOpenGLRunpath.driverLink}/lib/libcuda.so $out/lib
-        ln -s lib $out/lib64
-      '';
-    };
+let
+  cudaEnv = symlinkJoin {
+    name = "mathematica-cuda-env";
+    paths = with cudaPackages; [
+      cuda_cudart
+      cuda_nvcc
+      libcublas
+      libcufft
+      libcurand
+      libcusparse
+    ];
+    postBuild = ''
+      ln -s ${addOpenGLRunpath.driverLink}/lib/libcuda.so $out/lib
+      ln -s lib $out/lib64
+    '';
+  };
 
-in stdenv.mkDerivation {
+in
+stdenv.mkDerivation {
   inherit meta name src version;
 
   nativeBuildInputs = [

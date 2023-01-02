@@ -37,6 +37,6 @@
   };
 
   services.gnome.gnome-keyring.enable = true;
-  
+
   system.stateVersion = "22.11";
 }
