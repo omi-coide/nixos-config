@@ -13,10 +13,14 @@
       url = "github:wineee/rew-flakes";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    ylynur = {
+      url = "github:omi-coide/my-nur-packages";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     home-manager = {
       url = github:nix-community/home-manager/master;
       inputs.nixpkgs.follows = "nixpkgs";
-    };    
+    };
     grub2-themes = {
       url = github:vinceliuice/grub2-themes;
       inputs.nixpkgs.follows = "nixpkgs";
@@ -32,7 +36,7 @@
     #};
   };
 
-  outputs = {self, nixpkgs, home-manager, ... } @ inputs:
+  outputs = { self, nixpkgs, home-manager, ... } @ inputs:
     let
       system = "x86_64-linux";
     in
@@ -42,13 +46,6 @@
           inherit inputs system;
         }
       );
-      homeConfigurations.rewine = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.${system};
-        modules = [
-          ./home/home.nix
-        ];
-        extraSpecialArgs = { inherit inputs system; };
-      };
       apps.${system}.update-home = {
         type = "app";
         program = (nixpkgs.legacyPackages.${system}.writeScript "update-home" ''
@@ -59,6 +56,7 @@
           ${self.homeConfigurations.rewine.activationPackage}/activate || (echo "restoring old profile"; ${nixpkgs.legacyPackages.${system}.nix}/bin/nix profile install $old_profile)
         '').outPath;
       };
+      formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixpkgs-fmt;
     };
 }
 

@@ -175,7 +175,8 @@
         "nixos-cn": "nixos-cn",
         "nixpkgs": "nixpkgs",
         "nur": "nur",
-        "rew": "rew"
+        "rew": "rew",
+        "ylynur": "ylynur"
       }
     },
     "utils": {
@@ -190,6 +191,26 @@
       "original": {
         "owner": "numtide",
         "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "ylynur": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1669118635,
+        "narHash": "sha256-PrGZiv33v/AgRpoyXLRd6DKCOiO9Z5PuUJfIC7CXf48=",
+        "owner": "omi-coide",
+        "repo": "my-nur-packages",
+        "rev": "aeb9a9caf68ff0969d61320373be88b142ce8f00",
+        "type": "github"
+      },
+      "original": {
+        "owner": "omi-coide",
+        "repo": "my-nur-packages",
         "type": "github"
       }
     }
