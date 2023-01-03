@@ -3,32 +3,34 @@
 {
   qt5 = {
     enable = true;
-    #  style = "adwaita";
     platformTheme = "qt5ct";
   };
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
-    jack.enable = true;
-  };
+
   services.notify-daemon.enable = true;
 
-  services = {
-    xserver = {
-      enable = true;
 
-      displayManager = {
-        sddm.enable = true;
-        defaultSession = "plasma";
+  services.xserver = {
+    enable = true;
+    desktopManager = {
+      xterm.enable = false;
+      xfce = {
+        enable = true;
+        enableXfwm = false;
       };
-
-      ### kde plasma
-      desktopManager.plasma5.enable = true;
-
     };
+    windowManager = {
+      xmonad = {
+        enable = true;
+        enableContribAndExtras = true;
+        extraPackages = haskellPackages: [
+          haskellPackages.xmonad-contrib
+          haskellPackages.xmonad-extras
+          haskellPackages.xmonad
+        ];
+        config = builtins.readFile ./xmonad.hs
+      };
+    };
+    displayManager.defaultSession = "xfce+xmonad";
   };
 
 }

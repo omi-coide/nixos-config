@@ -9,10 +9,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nur.url = "github:nix-community/NUR";
-    rew = {
-      url = "github:wineee/rew-flakes";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     ylynur = {
       url = "github:omi-coide/my-nur-packages";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -21,19 +17,11 @@
       url = github:nix-community/home-manager/master;
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    grub2-themes = {
-      url = github:vinceliuice/grub2-themes;
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     emacs-overlay = {
       url = "github:nix-community/emacs-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-utils.follows = "flake-utils";
     };
-    #taffybar = {
-    #  url = "github:taffybar/taffybar";
-    #  inputs.flake-utils.follows = "flake-utils";
-    #};
   };
 
   outputs = { self, nixpkgs, home-manager, ... } @ inputs:
