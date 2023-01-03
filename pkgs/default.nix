@@ -46,7 +46,6 @@ let
 in
 {
   environment.systemPackages =
-    #  mynurpkgs
     nixpkgs-tools
     ++ qt5-libs
     ++ gui-tools
@@ -63,7 +62,6 @@ in
       unrar
       pamixer # 音量控制
       scrot
-      pipewire
       xorg.xmodmap
       termonad
 

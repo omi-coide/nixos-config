@@ -1,6 +1,5 @@
 { inputs, system, config, pkgs, ... }:
 let
-  games = [ pkgs.zeroad ];
   mma = pkgs.callPackage ../pkgs/homemade/mathematica/default.nix { version = "13.1.0"; lang = "cn"; };
   nurpkgs = [ ylynur.test-app ];
   utils = (with pkgs; [
@@ -46,15 +45,15 @@ let
     vlc
     audacity
     python3
-    (hiPrio wpsoffice)
-    quartus-prime-lite
+    # (hiPrio wpsoffice)
+    # quartus-prime-lite
 
     usbutils
     novnc
     killall
     qbittorrent
     rclone-browser
-    mma
+    # mma
     briss
     imagemagick
     coq
@@ -72,13 +71,12 @@ in
   home.username = "yly";
   home.homeDirectory = "/home/yly";
 
-  home.packages = games ++ utils ++ nurpkgs;
-
+  home.packages = utils ++ nurpkgs;
 
   programs.git = {
     enable = true;
-    # userName = "rewine";
-    # userEmail = "lhongxu@outlook.com";
+    # userName = "omi-coide";
+    # userEmail = "74772084+omi-coide@users.noreply.github.com";
     delta.enable = true;
     lfs.enable = false;
     aliases = {
@@ -109,12 +107,22 @@ in
       enable = true;
       plugins = [ "git" "extract" "sudo" "dirhistory" "per-directory-history" ];
       theme = "ys";
+      extraConfig = ''
+        alias s='screen'
+        alias open='xdg-open'
+        unalias ns
+        hash -d AS="$HOME/Documents/assignment"
+        hash -d PA="$HOME/Documents/HIT/Project/"
+        hash -d IBM="$HOME/Documents/IBM"
+        hash -d HIT="$HOME/grad/reports/"
+
+      '';
     };
     history = {
       size = 1000000;
     };
   };
-  programs.neovim = import ./neovim.nix;
+  programs.neovim = import ./neovim.nix { inherit pkgs; };
 
   programs.bat.enable = true;
 

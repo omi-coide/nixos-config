@@ -8,6 +8,5 @@
       ./i18n.nix
       ./desktop.nix
       ./network.nix
-      #./auto.nix
     ];
 }
