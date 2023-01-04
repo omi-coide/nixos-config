@@ -22,9 +22,9 @@ let
 
 in
 {
-  aemaeth-laptop = nixosSystem {
+  aemaeth-nixos = nixosSystem {
     inherit system;
     specialArgs = { inherit inputs system; };
-    modules = (import ./aemaeth-laptop) ++ sharedModules;
+    modules = (import ./aemaeth-nixos) ++ sharedModules;
   };
 }
