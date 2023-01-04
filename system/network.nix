@@ -1,11 +1,7 @@
 { config, lib, pkgs, ... }:
 
 {
-<<<<<<< HEAD
   networking.hostName = "aemaeth-laptop"; # Define your hostname.
-=======
-  networking.hostName = "aemaeth"; # Define your hostname.
->>>>>>> 02e6a55f9295b7009efe3996409f28ae88310a33
 
   networking.networkmanager.enable = true;
 
