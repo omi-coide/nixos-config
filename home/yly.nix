@@ -1,7 +1,8 @@
 { inputs, system, config, pkgs, ... }:
 let
   mma = pkgs.callPackage ../pkgs/homemade/mathematica/default.nix { version = "13.1.0"; lang = "cn"; };
-  nurpkgs = [ ylynur.test-app ];
+  # nurpkgs = [ inputs.ylynur.packages.test-app ];
+  nurpkgs = [];
   utils = (with pkgs; [
     # unix tools
     htop
