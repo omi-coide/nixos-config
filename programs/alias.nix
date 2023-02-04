@@ -13,7 +13,7 @@
     r = "ranger";
 
     nix-zsh = "nix-shell --run zsh";
-    reload = "sudo nixos-rebuild switch";
+    remake = "sudo nixos-rebuild switch";
 
     sgaa = "sudo git add";
     sgc = "sudo git commit";
