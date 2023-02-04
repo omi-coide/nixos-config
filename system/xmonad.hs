@@ -80,7 +80,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) =
       ((modMask, xK_space), sendMessage NextLayout),
       --  Reset the layouts on the current workspace to default.
       ((modMask .|. shiftMask, xK_space), setLayout $ XMonad.layoutHook conf),
-      ((modMask .|. shiftMask, xK_Return), spawn "gnome-terminal"),
+      ((modMask .|. shiftMask, xK_Return), spawn "xfce4-terminal"),
       -- Resize viewed windows to the correct size.
       ((modMask, xK_n), refresh),
       -- Move focus to the next window.

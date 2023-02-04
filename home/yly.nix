@@ -39,6 +39,7 @@ let
     vscode
     appimage-run
     remmina
+    xfce.xfce4-whiskermenu-plugin
 
 
     ### begin auto insert package ###
@@ -111,7 +112,6 @@ in
       extraConfig = ''
         alias s='screen'
         alias open='xdg-open'
-        unalias ns
         hash -d AS="$HOME/Documents/assignment"
         hash -d PA="$HOME/Documents/HIT/Project/"
         hash -d IBM="$HOME/Documents/IBM"
