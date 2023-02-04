@@ -45,6 +45,7 @@ let
     vlc
     audacity
     python3
+    tilda
     # (hiPrio wpsoffice)
     # quartus-prime-lite
 
@@ -75,8 +76,8 @@ in
 
   programs.git = {
     enable = true;
-    # userName = "omi-coide";
-    # userEmail = "74772084+omi-coide@users.noreply.github.com";
+    userName = "omi-coide";
+    userEmail = "74772084+omi-coide@users.noreply.github.com";
     delta.enable = true;
     lfs.enable = false;
     aliases = {
@@ -103,6 +104,9 @@ in
   programs.zsh.enable = true;
   programs.zsh.enableSyntaxHighlighting = true;
   programs.zsh = {
+    interactiveShellInit = ''
+    source ${pkgs.nix-index}/etc/profile.d/command-not-found.sh
+    '';
     oh-my-zsh = {
       enable = true;
       plugins = [ "git" "extract" "sudo" "dirhistory" "per-directory-history" ];
