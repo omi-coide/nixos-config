@@ -8,7 +8,7 @@ let
     #pkgsCross.aarch64-embedded.stdenv.cc
     #pkgsCross.riscv64.stdenv.cc pkgsCross.riscv64.binutils
     #clang clang-tools ninja 
-    qt5Full
+    qt5Base
     qtcreator
   ];
 
