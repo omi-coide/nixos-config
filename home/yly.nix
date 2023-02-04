@@ -104,9 +104,6 @@ in
   programs.zsh.enable = true;
   programs.zsh.enableSyntaxHighlighting = true;
   programs.zsh = {
-    interactiveShellInit = ''
-    source ${pkgs.nix-index}/etc/profile.d/command-not-found.sh
-    '';
     oh-my-zsh = {
       enable = true;
       plugins = [ "git" "extract" "sudo" "dirhistory" "per-directory-history" ];

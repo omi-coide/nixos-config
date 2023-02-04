@@ -2,6 +2,9 @@
 {
   programs.zsh = {
     enable = true;
+    interactiveShellInit = ''
+      source ${pkgs.nix-index}/etc/profile.d/command-not-found.sh
+    '';
   };
 
   environment.shells = [ pkgs.bashInteractive pkgs.zsh pkgs.fish ];
