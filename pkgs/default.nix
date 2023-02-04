@@ -73,5 +73,7 @@ in
       aria
       xdotool
 
+
+      xfce.xfce4-whiskermenu-plugin
     ]);
 }
