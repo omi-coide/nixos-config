@@ -19,11 +19,7 @@ let
     sqlite-interactive
     nix-index
     nix-update
-    # other apps
-    # nodejs
-    # nodePackages.npm
-    # yarn
-    # hugo
+    rnix-lsp
     v2ray
     screen
     # (writeShellScriptBin "et" "${config.programs.emacs.package}/bin/emacs -nw $@")
