@@ -43,6 +43,7 @@ let
     audacity
     python3
     tilda
+    git-crypt
     # (hiPrio wpsoffice)
     # quartus-prime-lite
 
