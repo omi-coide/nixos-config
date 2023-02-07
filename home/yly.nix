@@ -44,6 +44,8 @@ let
     python3
     tilda
     git-crypt
+    wine
+    winetricks
     # (hiPrio wpsoffice)
     # quartus-prime-lite
 
