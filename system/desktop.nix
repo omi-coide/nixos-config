@@ -32,5 +32,6 @@
     };
     displayManager.defaultSession = "xfce+xmonad";
   };
+  services.picom.enable =true;
 
 }

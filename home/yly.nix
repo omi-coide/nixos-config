@@ -19,11 +19,7 @@ let
     sqlite-interactive
     nix-index
     nix-update
-    # other apps
-    # nodejs
-    # nodePackages.npm
-    # yarn
-    # hugo
+    rnix-lsp
     v2ray
     screen
     # (writeShellScriptBin "et" "${config.programs.emacs.package}/bin/emacs -nw $@")
@@ -39,12 +35,14 @@ let
     vscode
     appimage-run
     remmina
+    xfce.xfce4-whiskermenu-plugin
 
 
     ### begin auto insert package ###
     vlc
     audacity
     python3
+    tilda
     # (hiPrio wpsoffice)
     # quartus-prime-lite
 
@@ -75,8 +73,8 @@ in
 
   programs.git = {
     enable = true;
-    # userName = "omi-coide";
-    # userEmail = "74772084+omi-coide@users.noreply.github.com";
+    userName = "omi-coide";
+    userEmail = "74772084+omi-coide@users.noreply.github.com";
     delta.enable = true;
     lfs.enable = false;
     aliases = {
@@ -110,7 +108,6 @@ in
       extraConfig = ''
         alias s='screen'
         alias open='xdg-open'
-        unalias ns
         hash -d AS="$HOME/Documents/assignment"
         hash -d PA="$HOME/Documents/HIT/Project/"
         hash -d IBM="$HOME/Documents/IBM"
