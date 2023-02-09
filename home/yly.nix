@@ -23,7 +23,6 @@ let
     v2ray
     screen
     # (writeShellScriptBin "et" "${config.programs.emacs.package}/bin/emacs -nw $@")
-    wayfire
     firefox
     glxinfo
     wayland-utils
@@ -35,7 +34,6 @@ let
     vscode
     appimage-run
     remmina
-    xfce.xfce4-whiskermenu-plugin
 
 
     ### begin auto insert package ###
@@ -103,6 +101,7 @@ in
   };
   programs.zsh.enable = true;
   programs.zsh.enableSyntaxHighlighting = true;
+  programs.zsh.autosuggestions.enable = true;
   programs.zsh = {
     oh-my-zsh = {
       enable = true;
@@ -155,6 +154,13 @@ in
 
   home.sessionVariables = {
     EDITOR = "nvim";
+    NIX_LD_LIBRARY_PATH = lib.makeLibraryPath [
+      stdenv.cc.cc
+      openssl
+      zlib
+      fuse
+    ];
+    NIX_LD = lib.fileContents "${stdenv.cc}/nix-support/dynamic-linker";
   };
 
   home.shellAliases = {
