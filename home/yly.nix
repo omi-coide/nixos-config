@@ -46,15 +46,15 @@ let
     git-crypt
     wine
     winetricks
-    # (hiPrio wpsoffice)
-    # quartus-prime-lite
+    (hiPrio wpsoffice)
+    quartus-prime-lite
 
     usbutils
     novnc
     killall
     qbittorrent
     rclone-browser
-    # mma
+    mma
     briss
     imagemagick
     coq
