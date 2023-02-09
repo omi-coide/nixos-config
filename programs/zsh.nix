@@ -6,7 +6,8 @@
       source ${pkgs.nix-index}/etc/profile.d/command-not-found.sh
     '';
   };
-
+  programs.zsh.autosuggestions.enable = true;
+  programs.zsh.syntaxHighlighting.enable = true;
   environment.shells = [ pkgs.bashInteractive pkgs.zsh pkgs.fish ];
 
   programs.thefuck.enable = true;

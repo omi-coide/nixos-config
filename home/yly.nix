@@ -1,4 +1,4 @@
-{ inputs, system, config, pkgs, ... }:
+{ inputs, system, config, pkgs, lib, ... }:
 let
   mma = pkgs.callPackage ../pkgs/homemade/mathematica/default.nix { version = "13.1.0"; lang = "cn"; };
   nurpkgs = (with inputs.ylynur.packages.${system}; [ test-app ]);
@@ -100,8 +100,6 @@ in
     };
   };
   programs.zsh.enable = true;
-  programs.zsh.enableSyntaxHighlighting = true;
-  programs.zsh.autosuggestions.enable = true;
   programs.zsh = {
     oh-my-zsh = {
       enable = true;
@@ -152,15 +150,19 @@ in
     enableSshSupport = true;
   };
 
-  home.sessionVariables = {
+  home.sessionVariables = with pkgs;{
     EDITOR = "nvim";
     NIX_LD_LIBRARY_PATH = lib.makeLibraryPath [
       stdenv.cc.cc
       openssl
       zlib
       fuse
+      # ...
     ];
-    NIX_LD = lib.fileContents "${stdenv.cc}/nix-support/dynamic-linker";
+    NIX_LD = pkgs.runCommand "ld.so" { } ''
+      ln -s "$(cat '${pkgs.stdenv.cc}/nix-support/dynamic-linker')" $out
+    '';
+
   };
 
   home.shellAliases = {
