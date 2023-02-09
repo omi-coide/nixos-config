@@ -33,6 +33,6 @@
     allowUnfree = true;
     allowUnsupportedSystem = true;
     allowBroken = true;
-    permittedInsecurePackages = [ "electron-9.4.4" ]; #typora
+    permittedInsecurePackages = [ "electron-9.4.4" "qtwebkit-5.212.0-alpha4" ]; #typora
   };
 }

@@ -27,7 +27,7 @@
           haskellPackages.xmonad-extras
           haskellPackages.xmonad
         ];
-        config = builtins.readFile ./xmonad.hs
+        config = builtins.readFile ./xmonad.hs;
       };
     };
     displayManager.defaultSession = "xfce+xmonad";
