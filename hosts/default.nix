@@ -22,11 +22,6 @@ let
 
 in
 {
-  yly-arch = nixosSystem {
-    inherit system;
-    specialArgs = { inherit inputs system; };
-    modules = (import ./yly-arch) ++ sharedModules;
-  };
   nixos = nixosSystem {
     inherit system;
     specialArgs = { inherit inputs system; };
