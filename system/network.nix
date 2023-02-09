@@ -24,4 +24,9 @@
     enable = true;
     configFile = toString ./v2ray.json;
   };
+  services.avahi = {
+    enable = true;
+    nssmdns = true;
+    publish.enable = true;
+  };
 }
