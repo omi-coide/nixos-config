@@ -1,7 +1,7 @@
 { config, lib, pkgs, ... }:
 
 {
-  networking.hostName = "aemaeth-laptop"; # Define your hostname.
+  networking.hostName = "yly-arch"; # Define your hostname.
 
   networking.networkmanager.enable = true;
 
@@ -22,7 +22,7 @@
 
   services.v2ray = {
     enable = true;
-    configFile = toString ./v2ray.json;
+    configFile = toString ../secrets/v2ray.json;
   };
   services.avahi = {
     enable = true;

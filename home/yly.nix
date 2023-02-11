@@ -23,44 +23,20 @@ let
     v2ray
     screen
     # (writeShellScriptBin "et" "${config.programs.emacs.package}/bin/emacs -nw $@")
-    wayfire
-    firefox
-    glxinfo
-    wayland-utils
-    krfb
-    tigervnc
-    steam-run
     nix-ld
-    tdesktop
     vscode
     appimage-run
-    remmina
-    xfce.xfce4-whiskermenu-plugin
 
 
     ### begin auto insert package ###
-    vlc
-    audacity
     python3
-    tilda
-    git-crypt
-    wine
-    winetricks
     # (hiPrio wpsoffice)
     # quartus-prime-lite
 
     usbutils
     novnc
     killall
-    qbittorrent
-    rclone-browser
-    # mma
-    briss
-    imagemagick
-    coq
     rclone
-    freerdp
-    xrdp
     rlwrap
   ]);
 in

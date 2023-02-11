@@ -11,26 +11,10 @@
 
   # Enable sound.
   sound.enable = false;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
-    jack.enable = true;
-  };
   # Enable touchpad support (enabled default in most desktopManager).
-  services.xserver.libinput.enable = true;
 
   # Enabling Bluetooth support
-  hardware.bluetooth.enable = true;
-  services.blueman.enable = true;
-
   # set console font
-  console = {
-    font = "Lat2-Terminus16";
-    keyMap = "us";
-  };
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
@@ -42,8 +26,6 @@
     enable = true;
     enableSSHSupport = true;
   };
-
-  services.gnome.gnome-keyring.enable = true;
 
   system.stateVersion = "22.11";
 }
