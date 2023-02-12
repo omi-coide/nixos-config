@@ -22,7 +22,6 @@ let
     rnix-lsp
     v2ray
     screen
-    # (writeShellScriptBin "et" "${config.programs.emacs.package}/bin/emacs -nw $@")
     nix-ld
     vscode
     appimage-run
@@ -30,9 +29,6 @@ let
 
     ### begin auto insert package ###
     python3
-    # (hiPrio wpsoffice)
-    # quartus-prime-lite
-
     usbutils
     novnc
     killall
@@ -78,7 +74,6 @@ in
     };
   };
   programs.zsh.enable = true;
-  programs.zsh.enableSyntaxHighlighting = true;
   programs.zsh = {
     oh-my-zsh = {
       enable = true;

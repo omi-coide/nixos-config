@@ -2,6 +2,8 @@
 {
   programs.zsh = {
     enable = true;
+    autosuggestions.enable = true;
+    syntaxHighlighting.enable = true;
     interactiveShellInit = ''
       source ${pkgs.nix-index}/etc/profile.d/command-not-found.sh
     '';
