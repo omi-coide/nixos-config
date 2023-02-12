@@ -22,7 +22,7 @@
 
   services.v2ray = {
     enable = true;
-    configFile = toString ./v2ray.json;
+    configFile = toString ../secrets/v2ray.json;
   };
   services.avahi = {
     enable = true;
