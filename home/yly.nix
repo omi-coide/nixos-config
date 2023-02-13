@@ -1,7 +1,7 @@
 { inputs, system, config, pkgs, ... }:
 let
   mma = pkgs.callPackage ../pkgs/homemade/mathematica/default.nix { version = "13.1.0"; lang = "cn"; };
-  nurpkgs = (with inputs.ylynur.packages.${system}; [test-app ]);
+  nurpkgs = (with inputs.ylynur.packages.${system}; [ test-app ]);
   utils = (with pkgs; [
     # unix tools
     htop
@@ -74,6 +74,9 @@ in
     };
   };
   programs.zsh.enable = true;
+  programs.direnv.enable = true;
+  programs.direnv.nix-direnv.enable = true;
+
   programs.zsh = {
     oh-my-zsh = {
       enable = true;
@@ -113,9 +116,6 @@ in
     package = pkgs.emacsNativeComp;
   };
   home.sessionPath = [ "$HOME/.emacs.d/bin" ];
-
-  programs.direnv.enable = true;
-  programs.direnv.nix-direnv.enable = true;
 
   programs.gpg.enable = true;
   services.gpg-agent = {

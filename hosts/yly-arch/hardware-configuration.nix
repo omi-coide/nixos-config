@@ -5,6 +5,6 @@
   boot.initrd.availableKernelModules = [ "ata_piix" "uhci_hcd" "vmw_pvscsi" "xen_blkfront" ];
   boot.initrd.kernelModules = [ "nvme" ];
   fileSystems."/" = { device = "/dev/sda1"; fsType = "ext4"; };
-#  swapDevices = [ { device = "/swapfile"; size=8*1024;} ];
-  
+  #  swapDevices = [ { device = "/swapfile"; size=8*1024;} ];
+
 }
