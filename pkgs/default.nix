@@ -42,6 +42,7 @@ let
     coreutils
     topgrade
     miller
+    exa
   ];
 in
 {
