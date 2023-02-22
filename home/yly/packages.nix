@@ -1,5 +1,5 @@
 # this file contains packages that don't hava programs.* options for configuration
-{ pkgs }:
+{ pkgs , nur }:
 let
   cli-utils = with pkgs; [
     # unix tools
@@ -36,7 +36,7 @@ let
     quartus-prime-lite
     wpsoffice
     vscode
-
+    nur.mathematica
   ];
   graphical = with pkgs; [
 
@@ -61,6 +61,6 @@ let
     freerdp
     xrdp
   ];
-  games = with pkgs; [ yuzu ppsspp ];
+  games = with pkgs; [ yuzu ppsspp nur.vita3k ];
 in
     cli-utils ++ development-tools ++ games ++ unfree-pro-softwares ++ graphical

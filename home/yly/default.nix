@@ -1,7 +1,7 @@
 { inputs, system, config, pkgs, lib, ... }:
 let
-  nurpkgs = (with inputs.ylynur.packages.${system}; [ test-app mathematica ]);
-  packages = import ./packages.nix {inherit pkgs;};   
+  nurpkgs = (with inputs.ylynur.packages.${system}; [ test-app ]);
+  packages = import ./packages.nix {inherit pkgs; nur = inputs.ylynur.packages.${system}; };   
 in
 {
   services.trayer.enable = true;
