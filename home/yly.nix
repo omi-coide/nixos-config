@@ -19,7 +19,7 @@ let
     sqlite-interactive
     nix-index
     nix-update
-    rnix-lsp
+    nil
     v2ray
     screen
     # (writeShellScriptBin "et" "${config.programs.emacs.package}/bin/emacs -nw $@")
