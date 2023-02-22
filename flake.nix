@@ -10,7 +10,7 @@
     };
     nur.url = "github:nix-community/NUR";
     ylynur = {
-      url = "github:omi-coide/my-nur-packages/50abd464293651dd0f04c6e2b305f43c118fc375";
+      url = "github:omi-coide/my-nur-packages";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     home-manager = {
