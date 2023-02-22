@@ -2,7 +2,7 @@
   description = "nixos-config";
 
   inputs = {
-    nixpkgs.url = "nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/ac1f5b72a9e95873d1de0233fddcb56f99884b37";
     flake-utils.url = "github:numtide/flake-utils";
     nixos-cn = {
       url = "github:nixos-cn/flakes";
@@ -10,7 +10,7 @@
     };
     nur.url = "github:nix-community/NUR";
     ylynur = {
-      url = "github:omi-coide/my-nur-packages";
+      url = "github:omi-coide/my-nur-packages/50abd464293651dd0f04c6e2b305f43c118fc375";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     home-manager = {
