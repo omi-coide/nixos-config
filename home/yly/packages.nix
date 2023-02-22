@@ -1,5 +1,5 @@
 # this file contains packages that don't hava programs.* options for configuration
-{ pkgs , nur }:
+{ pkgs, nur }:
 let
   cli-utils = with pkgs; [
     # unix tools
@@ -63,4 +63,4 @@ let
   ];
   games = with pkgs; [ yuzu ppsspp nur.vita3k ];
 in
-    cli-utils ++ development-tools ++ games ++ unfree-pro-softwares ++ graphical
+cli-utils ++ development-tools ++ games ++ unfree-pro-softwares ++ graphical

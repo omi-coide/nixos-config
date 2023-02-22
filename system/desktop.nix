@@ -32,6 +32,16 @@
     };
     displayManager.defaultSession = "xfce+xmonad";
   };
+  xdg = {
+    portal = {
+      enable = true;
+      extraPortals = with pkgs; [
+        xdg-desktop-portal-wlr
+        xdg-desktop-portal-gtk
+      ];
+      gtkUsePortal = true;
+    };
+  };
   services.picom.enable = true;
   services.picom.vSync = true;
 }

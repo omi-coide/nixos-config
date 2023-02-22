@@ -160,11 +160,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1677078409,
-        "narHash": "sha256-ye3Zovw2pa1pf3UtJAwv9aS8Bmg9bFqwaN8ULrkT8rs=",
+        "lastModified": 1677080087,
+        "narHash": "sha256-PkH6y9zBCglNx/S7ihwAOMJIqxhX533OzMcIkO1qc2Y=",
         "owner": "omi-coide",
         "repo": "my-nur-packages",
-        "rev": "902fc996023d5685fd19e067f7ff89173b83565d",
+        "rev": "3a637ecfdc34bd721b74a34fb33bf938e80e5da2",
         "type": "github"
       },
       "original": {
