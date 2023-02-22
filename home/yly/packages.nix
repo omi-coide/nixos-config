@@ -33,7 +33,6 @@ let
 
   ];
   unfree-pro-softwares = with pkgs;[
-    callPackage ../pkgs/homemade/mathematica/default.nix { version = "13.1.0"; lang = "cn"; }
     quartus-prime-lite
     wpsoffice
     vscode
