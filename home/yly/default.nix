@@ -1,66 +1,7 @@
 { inputs, system, config, pkgs, lib, ... }:
 let
-  mma = pkgs.callPackage ../pkgs/homemade/mathematica/default.nix { version = "13.1.0"; lang = "cn"; };
   nurpkgs = (with inputs.ylynur.packages.${system}; [ test-app ]);
-  utils = (with pkgs; [
-    # unix tools
-    htop
-    ugrep
-    ripgrep
-    fd
-    libtree # ldd as a tree
-    tldr
-    duf
-    ncdu
-    pstree
-    cloc
-    colorpicker
-    # nix tools
-    sqlite-interactive
-    nix-index
-    nix-update
-    nil
-    v2ray
-    screen
-    # (writeShellScriptBin "et" "${config.programs.emacs.package}/bin/emacs -nw $@")
-    firefox
-    glxinfo
-    wayland-utils
-    krfb
-    tigervnc
-    steam-run
-    nix-ld
-    tdesktop
-    vscode
-    appimage-run
-    remmina
-
-
-    ### begin auto insert package ###
-    vlc
-    audacity
-    python3
-    tilda
-    git-crypt
-    wine
-    winetricks
-    (hiPrio wpsoffice)
-    quartus-prime-lite
-
-    usbutils
-    novnc
-    killall
-    qbittorrent
-    rclone-browser
-    mma
-    briss
-    imagemagick
-    coq
-    rclone
-    freerdp
-    xrdp
-    rlwrap
-  ]);
+  packages = import ./packages.nix {inherit pkgs;};
 in
 {
   services.trayer.enable = true;
@@ -70,7 +11,7 @@ in
   home.username = "yly";
   home.homeDirectory = "/home/yly";
 
-  home.packages = utils ++ nurpkgs;
+  home.packages = packages ++ nurpkgs;
 
   programs.git = {
     enable = true;
