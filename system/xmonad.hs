@@ -31,7 +31,7 @@ myManageHook =
   composeAll
     [ (className =? "Xfce4-terminal" <&&> stringProperty "WM_WINDOW_ROLE" =? "xfce4-terminal-dropdown") --> doCenterFloat,
       (className =? "Wine") --> doCenterFloat,
-      (className =? "Tilda") --> doFloat <+> hasBorder False,
+      (className =? "Tilda") --> doCenterFloat <+> hasBorder False,
       isDialog --> doFloat,
       --isDialog --> doRaise <+> doFloat,
       (className =? "Vsim") --> doCenterFloat,
@@ -71,6 +71,8 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) =
       ((modMask, xK_p), spawn "xfce4-popup-whiskermenu"),
       ((modMask, xK_f), spawn "thunar"),
       ((modMask .|. controlMask, xK_d), spawn "xdotool click --repeat 2 1 key --delay 400 ctrl+c  ctrl+F12"),
+      ((modMask , xK_c), spawn "xfce4-terminal --drop-down"),
+
       --((modMask, xK_d), spawn "goldendict"),
       ((modMask, xK_g), kill),
       ((modMask, xK_Escape), kill),
@@ -121,7 +123,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) =
       -- mod-{w,e,r}, Switch to physical/Xinerama screens 1, 2, or 3
       -- mod-shift-{w,e,r}, Move client to screen 1, 2, or 3
       [ ((m .|. modMask, key), screenWorkspace sc >>= flip whenJust (windows . f))
-        | (key, sc) <- zip [xK_w, xK_e, xK_r] [0 ..],
+        | (key, sc) <- zip [xK_a, xK_s, xK_d] [0 ..],
           (f, m) <- [(W.view, 0), (W.shift, shiftMask)]
       ]
 
@@ -148,7 +150,7 @@ conf =
         borderWidth = 4,
         focusFollowsMouse = False,
         clickJustFocuses = True,
-        workspaces = map show [1 .. 9 :: Int]
+        workspaces = map show [1 .. 5 :: Int]
       }
   where
     tall = ResizableTall 1 (3 / 100) (1 / 2) []
