@@ -1,7 +1,7 @@
 { pkgs, lib, ... }:
 
 {
-  qt5 = {
+  qt = {
     enable = true;
     platformTheme = "qt5ct";
   };
