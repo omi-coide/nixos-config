@@ -61,6 +61,6 @@ let
     freerdp
     xrdp
   ];
-  games = with pkgs; [ yuzu-ea ];
+  games = with pkgs; [ yuzu ppsspp ];
 in
     cli-utils ++ development-tools ++ games ++ unfree-pro-softwares ++ graphical
