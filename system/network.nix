@@ -29,4 +29,11 @@
     nssmdns = true;
     publish.enable = true;
   };
+  # for remote usage
+  services.xrdp = {
+    enable = true;
+    defaultWindowManager = "icewm";
+    openFirewall = true;
+  };
+  services.xserver.windowManager.icewm.enable = true;
 }
