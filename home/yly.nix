@@ -84,7 +84,7 @@ in
   home.username = "yly";
   home.homeDirectory = "/home/yly";
 
-  home.packages =utils ++ nurpkgs ++ [ tex ];
+  home.packages = utils ++ nurpkgs ++ tex;
 
   programs.git = {
     enable = true;
