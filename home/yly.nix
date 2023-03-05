@@ -1,13 +1,13 @@
 { inputs, system, config, pkgs, ... }:
 let
   nurpkgs = (with inputs.ylynur.packages.${system}; [ test-app ]);
-  tex =  (pkgs.texlive.combine {
-    inherit (pkgs.texlive) scheme-basic
+  tex =  [(pkgs.texlive.combine {
+    inherit (pkgs.texlive) scheme-medium
       dvisvgm dvipng# for preview and export as html
       wrapfig amsmath ulem hyperref capt-of
             adobemapping algorithm2e amscls amsfonts arphic atbegshi atveryend 
       auxhook babel beamer bibtex bigfoot bigintcalc bitset 
-      booktabs carlisle ccaption changepage cjk cjkpunct cm cns ctablestack ctex 
+      booktabs carlisle ccaption caption changepage cjk cjkpunct cm cns ctablestack ctex 
       datatool dehyph dvipdfmx dvips 
       ec enumitem environ epstopdf-pkg eso-pic etex etexcmds etoolbox euenc everyhook 
       everysel everyshi fancyhdr fancyvrb fandol filehook firstaid float fontaxes 
@@ -37,7 +37,10 @@ let
        url varwidth wadalab xcjk2uni xcolor xecjk xetex 
        xetexconfig xfor xkeyval xltxtra xpinyin xstring xunicode 
       zapfding zhmetrics zhmetrics-uptex zhnumber;
-  });
+    })
+    pkgs.xdg-utils
+    pkgs.ghostscript
+  ];
   utils = (with pkgs; [
     # unix tools
     htop
