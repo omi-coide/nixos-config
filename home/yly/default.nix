@@ -103,7 +103,9 @@ in
     NIX_LD = pkgs.runCommand "ld.so" { } ''
       ln -s "$(cat '${pkgs.stdenv.cc}/nix-support/dynamic-linker')" $out
     '';
-
+    http_proxy = "http://localhost:12333";
+    https_proxy = "http://localhost:12333";
+    all_proxy = "http://localhost:12333";
   };
 
   home.shellAliases = {
