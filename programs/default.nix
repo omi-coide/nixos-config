@@ -11,7 +11,7 @@
     package = pkgs.plasma5Packages.kdeconnect-kde; #pkgs.gnomeExtensions.gsconnect
   };
 
-  programs.nix-ld.enable = true;
+  programs.nix-ld.enable = false;
 
   programs.xonsh.enable = true;
 

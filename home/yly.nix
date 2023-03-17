@@ -39,7 +39,6 @@ let
       zapfding zhmetrics zhmetrics-uptex zhnumber;
     })
     pkgs.xdg-utils
-    pkgs.ghostscript
   ];
   utils = (with pkgs; [
     # unix tools
@@ -73,6 +72,10 @@ let
     killall
     rclone
     rlwrap
+    bind
+    inetutils
+    whois
+    nmap
 
   ]);
 in
