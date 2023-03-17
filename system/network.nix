@@ -36,4 +36,11 @@
     openFirewall = true;
   };
   services.xserver.windowManager.icewm.enable = true;
+  services.nfs.server = {
+    enable = true;
+    exports = ''
+      /home/yly       192.168.1.0/24(rw,sync)
+    '';
+  };
+
 }
