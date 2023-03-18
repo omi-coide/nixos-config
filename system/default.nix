@@ -8,5 +8,6 @@
       ./i18n.nix
       ./desktop.nix
       ./network.nix
+      ./virtualization.nix
     ];
 }
