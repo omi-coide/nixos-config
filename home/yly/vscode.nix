@@ -3,13 +3,8 @@
 # check https://nixos.wiki/wiki/Visual_Studio_Code
 with pkgs;(vscode-with-extensions.override {
   vscodeExtensions = with vscode-extensions; [
-    bbenoist.nix
-    ms-python.python
-    ms-azuretools.vscode-docker
     ms-vscode-remote.remote-ssh
   ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
-    {
-      extensions = [
         {
           name = "haskell";
           publisher = "haskell";
@@ -58,7 +53,17 @@ with pkgs;(vscode-with-extensions.override {
           version = "0.4.1438";
           sha256 = "104ij4lnia038h8dx1nhbmixi3y640xp1i2vfw8zisafr79ggnqb";
         }
+        {
+          name = "vscode-typescript-vue-plugin";
+          publisher = "Vue";
+          version = "1.3.2";
+          sha256 = "sha256-AaM9GVNkpAHPy7aoCQv5zULxhEqou08N3XFx9Zv5VSo=";
+        }
+        {
+          name = "volar";
+          publisher = "Vue";
+          version = "1.3.2";
+          sha256 = "sha256-hO1wmfi1T1ORlegZ6TXW864XNIBJKPftP2+W5veekR4=";
+        }
       ];
-    }
-  ];
 })
