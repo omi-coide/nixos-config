@@ -65,5 +65,11 @@ with pkgs;(vscode-with-extensions.override {
           version = "1.3.2";
           sha256 = "sha256-hO1wmfi1T1ORlegZ6TXW864XNIBJKPftP2+W5veekR4=";
         }
+        {
+          name = "cpptools";
+          publisher = "ms-vscode";
+          version = "1.14.4";
+          sha256 = "sha256-0xdvS68feaKHLkQ1X/oqNGmv449L5CcDnqQTl5pzm48=";
+        }
       ];
 })
