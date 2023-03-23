@@ -17,6 +17,7 @@
         enable = true;
         enableXfwm = false;
       };
+      gnome.enable = true;
     };
     windowManager = {
       xmonad = {
@@ -30,18 +31,19 @@
         config = builtins.readFile ./xmonad.hs;
       };
     };
-    displayManager.defaultSession = "xfce+xmonad";
+    displayManager.lightdm.enable = true;
+    displayManager.defaultSession = "gnome";
   };
-  xdg = {
-    portal = {
-      enable = true;
-      extraPortals = with pkgs; [
-        xdg-desktop-portal-wlr
-        xdg-desktop-portal-gtk
-      ];
-      gtkUsePortal = true;
-    };
-  };
-  services.picom.enable = true;
+  # xdg = {
+  #   portal = {
+  #     enable = true;
+  #     extraPortals = with pkgs; [
+  #       xdg-desktop-portal-wlr
+  #       xdg-desktop-portal-gtk
+  #     ];
+  #     # gtkUsePortal = true;
+  #   };
+  # };
+  services.picom.enable = false;
   services.picom.vSync = true;
 }
