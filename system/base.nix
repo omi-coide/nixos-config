@@ -10,7 +10,8 @@
   # services.printing.enable = true;
 
   # Enable sound.
-  sound.enable = false;
+  sound.enable = lib.mkForce false;
+  hardware.pulseaudio.enable = lib.mkForce false;
   services.pipewire = {
     enable = true;
     alsa.enable = true;
@@ -34,6 +35,7 @@
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
+  services.openssh.settings.X11Forwarding = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
