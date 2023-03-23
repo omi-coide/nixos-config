@@ -30,8 +30,8 @@ let
   development-tools = with pkgs; [
     coq
     python3
-    (import ./vscode.nix {inherit pkgs;})
-  ];
+  ] ++
+  (import ./vscode.nix { inherit pkgs; });
   unfree-pro-softwares = with pkgs;[
     quartus-prime-lite
     wpsoffice
