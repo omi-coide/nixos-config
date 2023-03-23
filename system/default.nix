@@ -9,5 +9,6 @@
       ./desktop.nix
       ./network.nix
       ./virtualization.nix
+      ./vscode-server.nix
     ];
 }

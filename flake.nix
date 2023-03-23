@@ -2,7 +2,7 @@
   description = "nixos-config";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/ac1f5b72a9e95873d1de0233fddcb56f99884b37";
+    nixpkgs.url = "github:NixOS/nixpkgs";
     flake-utils.url = "github:numtide/flake-utils";
     nixos-cn = {
       url = "github:nixos-cn/flakes";
@@ -21,6 +21,10 @@
       url = "github:nix-community/emacs-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-utils.follows = "flake-utils";
+    };
+    vscode-server = {
+      url = "github:msteen/nixos-vscode-server";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 

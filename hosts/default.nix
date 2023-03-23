@@ -19,6 +19,7 @@ let
   ] ++ (with inputs;[
     # agenix.nixosModule
     home-manager.nixosModules.home-manager
+    vscode-server.nixosModule
   ]) ++ (import ../modules);
 
 in
