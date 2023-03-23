@@ -31,6 +31,7 @@ let
 
   gui-tools = with pkgs; [
     okular
+    weston
 
     ghostwriter
     flameshot

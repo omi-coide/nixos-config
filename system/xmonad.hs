@@ -33,6 +33,7 @@ myManageHook =
       (className =? "Wine") --> doCenterFloat,
       (className =? "Tilda") --> doCenterFloat <+> hasBorder False,
       isDialog --> doFloat,
+      (className =? "Weston Compositor") --> doFloat,
       --isDialog --> doRaise <+> doFloat,
       (className =? "Vsim") --> doCenterFloat,
       (className =? "Wave") --> doCenterFloat,
