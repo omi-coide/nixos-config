@@ -29,4 +29,21 @@
     nssmdns = true;
     publish.enable = true;
   };
+  networking.wireguard.interfaces = {
+    wg0 = {
+      ips = [ "192.168.1.24/32" ];
+      listenPort = 51820;
+      privateKeyFile = "/key/private";
+      peers = [
+        {
+          publicKey = "W2N2uDC8HGNy8Li0O6XwELeNOlIdJEfCneiuSjrekRc=";
+          allowedIPs = [ "192.168.1.192/32" ];
+          endpoint = "hitlug.duckdns.org:30081";
+          persistentKeepalive = 30;
+        }
+      ];
+
+    };
+
+  };
 }
