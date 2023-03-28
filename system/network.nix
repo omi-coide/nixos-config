@@ -39,6 +39,7 @@
           publicKey = "W2N2uDC8HGNy8Li0O6XwELeNOlIdJEfCneiuSjrekRc=";
           allowedIPs = [ "192.168.1.192/32" ];
           endpoint = "hitlug.duckdns.org:30081";
+          dynamicEndpointRefreshSeconds = 60;
           persistentKeepalive = 30;
         }
       ];
