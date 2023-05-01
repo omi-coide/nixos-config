@@ -8,7 +8,7 @@
 
   services.notify-daemon.enable = true;
 
-
+  services.xserver.exportConfiguration = true;
   services.xserver = {
     enable = true;
     desktopManager = {
