@@ -11,7 +11,7 @@
     nur.url = "github:nix-community/NUR";
     ylynur = {
       url = "github:omi-coide/my-nur-packages";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.url = "github:NixOS/nixpkgs/53f650a8fb598198606a4efbcb638b3076f5b585";
     };
     home-manager = {
       url = "github:nix-community/home-manager/master";
