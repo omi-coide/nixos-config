@@ -33,7 +33,6 @@ let
   ] ++
   (import ./vscode.nix { inherit pkgs; });
   unfree-pro-softwares = with pkgs;[
-    quartus-prime-lite
     wpsoffice
     nur.mathematica
   ];
@@ -51,8 +50,6 @@ let
     tigervnc
     vlc
     audacity
-    wine
-    winetricks
     usbutils
     novnc
     killall
@@ -61,7 +58,7 @@ let
     xrdp
     vnote
   ];
-  games = with pkgs; [ yuzu ppsspp nur.vita3k ];
+  games = with pkgs; [ ppsspp ];
   network = with pkgs;[ bind whois ];
 in
 cli-utils ++ development-tools ++ games ++ unfree-pro-softwares ++ graphical ++ network
