@@ -12,8 +12,9 @@
 
   boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "usbhid" "uas" "sd_mod" "sdhci_pci" ];
   boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [ "kvm-intel" "8821cu" ];
-  boot.extraModulePackages = [ pkgs.linuxPackages_latest.rtl8821cu ];
+  boot.kernelModules = [ "kvm-intel" ];
+  boot.extraModulePackages = [ ];
+  # boot.extraModulePackages = [ pkgs.linuxPackages_latest.rtl8821cu ];
   boot.kernelPackages = pkgs.linuxPackages_latest;
   fileSystems."/" =
     {

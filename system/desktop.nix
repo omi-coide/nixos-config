@@ -44,6 +44,6 @@
   #     # gtkUsePortal = true;
   #   };
   # };
-  services.picom.enable = false;
+  services.picom.enable = true;
   services.picom.vSync = true;
 }
