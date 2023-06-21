@@ -1,3 +1,4 @@
 # hardware-configuration.nix
 system/wireguard
 system/wireguard/*
+secrets/*
