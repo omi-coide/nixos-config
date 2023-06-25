@@ -1,7 +1,7 @@
 { inputs, system, config, pkgs, ... }:
 let
   mma = pkgs.callPackage ../pkgs/homemade/mathematica/default.nix { version = "13.1.0"; lang = "cn"; };
-  nurpkgs = (with inputs.ylynur.packages.${system}; [test-app ]);
+  nurpkgs = (with inputs.ylynur.packages.${system}; [ test-app ]);
   utils = (with pkgs; [
     # unix tools
     htop
@@ -53,6 +53,7 @@ let
     novnc
     killall
     qbittorrent
+    qbittorrent-nox
     rclone-browser
     # mma
     briss

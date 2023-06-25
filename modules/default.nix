@@ -1,3 +1,4 @@
 [
   ./notify
+  ./qbitorrent-nox
 ]

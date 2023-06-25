@@ -21,12 +21,54 @@
   #networking.firewall.allowedUDPPorts = [ ];
 
   services.v2ray = {
-    enable = true;
+    enable = false;
     configFile = toString ./v2ray.json;
   };
   services.avahi = {
     enable = true;
     nssmdns = true;
     publish.enable = true;
+  };
+  services.qbittorrent = {
+    enable = true;
+    port = 8080;
+    settings = {
+      LegalNotice = {
+        Accepted = true;
+      };
+      BitTorrent = {
+        "Session\\PieceExtentAffinity" = true;
+        "Session\\Port" = 39603;
+      };
+      Preferences = {
+        "Advanced\\AnonymousMode" = false;
+        "Advanced\\osCache" = false;
+        "Bittorrent\\Encryption" = 0;
+        "Bittorrent\\LSD" = false;
+        "Bittorrent\\MaxConnecs" = 10000;
+        "Bittorrent\\MaxConnecsPerTorrent" = 1000;
+        "Bittorrent\\MaxRatio" = 1000;
+        "Bittorrent\\MaxUploads" = 1000;
+        "Bittorrent\\MaxUploadsPerTorrent" = 100;
+        "Connection\\GlobalUPLimit" = 8192;
+        "Connection\\PortRangeMin" = config.services.qbittorrent.settings.BitTorrent."Session\\Port";
+        "Connection\\ResolvePeerCountries" = true;
+        "Connection\\UPnP" = false;
+        "Downloads\\SavePath" = "/home/yly/Downloads";
+        "Downloads\\StartInPause" = true;
+        "Queueing\\MaxActiveDownloads" = 1;
+        "Queueing\\MaxActiveTorrents" = 1000;
+        "Queueing\\MaxActiveUploads" = 1000;
+        "Queueing\\QueueingEnabled" = true;
+        "WebUI\\LocalHostAuth" = false;
+        "WebUI\\Username" = "admin";
+        "WebUI\\UseUPnP" = false;
+        "WebUI\\Address" = "0.0.0.0";
+      };
+    };
+    user = "yly";
+    group = "users";
+
+
   };
 }
