@@ -16,7 +16,7 @@
   networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Open ports in the firewall.
-  #networking.firewall.enable = true;
+  networking.firewall.enable = false;
   #networking.firewall.allowedTCPPorts = [ 22 80 ];
   #networking.firewall.allowedUDPPorts = [ ];
 
@@ -31,7 +31,7 @@
   };
   services.qbittorrent = {
     enable = true;
-    port = 8080;
+    port = 10080;
     settings = {
       LegalNotice = {
         Accepted = true;
@@ -60,6 +60,8 @@
         "Queueing\\MaxActiveTorrents" = 1000;
         "Queueing\\MaxActiveUploads" = 1000;
         "Queueing\\QueueingEnabled" = true;
+        "WebUI\\AuthSubnetWhitelist" = "192.168.1.0/24";
+        "WebUI\\AuthSubnetWhitelistEnabled" = true;
         "WebUI\\LocalHostAuth" = false;
         "WebUI\\Username" = "admin";
         "WebUI\\UseUPnP" = false;
@@ -70,5 +72,10 @@
     group = "users";
 
 
+  };
+  services.duckdns = {
+    enable = true;
+    token = (import ../secrets/secrets.nix).duckdns_token;
+    domain = "nixlac";
   };
 }

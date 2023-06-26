@@ -5,11 +5,6 @@ let
     gcc
     gdb
     binutils
-    #pkgsCross.aarch64-embedded.stdenv.cc
-    #pkgsCross.riscv64.stdenv.cc pkgsCross.riscv64.binutils
-    #clang clang-tools ninja 
-    qt5.qtbase
-    qtcreator
   ];
 
   nixpkgs-tools = with pkgs; [
