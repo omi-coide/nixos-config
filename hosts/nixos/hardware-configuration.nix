@@ -11,11 +11,11 @@
   boot.loader.systemd-boot.enable = true;
 
   boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "usbhid" "uas" "sd_mod" "sdhci_pci" ];
-  boot.initrd.kernelModules = [ ];
+  boot.initrd.kernelModules = [ "8821cu" ];
   boot.kernelModules = [ "kvm-intel" ];
-  boot.extraModulePackages = [ ];
+  boot.extraModulePackages = [ config.boot.kernelPackages.rtl8821cu ];
   # boot.extraModulePackages = [ pkgs.linuxPackages_latest.rtl8821cu ];
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages_6_1;
   fileSystems."/" =
     {
       device = "/dev/disk/by-uuid/7908a415-b26b-40d0-87c8-984e154389df";

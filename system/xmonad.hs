@@ -47,18 +47,18 @@ myManageHook =
     ]
 
 --,title =? "DropDownXfce4Term" --> doCenterFloat]
-{- myStartupHook :: X ()
+myStartupHook :: X ()
 myStartupHook = do
-  spawnOnce "tmux new-session -s xk -d  bash && tmux send-keys -t xk:1 'sudo xkeysnail /etc/xkeysnail/config.py --devices \"AT Translated Set 2 keyboard\"' C-m"
-  spawnOnce "feh --bg-fill --randomize /home/yly/Pictures/Wallpapers/* &"
-  spawnOnce "setsid xray -c ~/proxy.json"
-  spawnOnce "fcitx5"
-  spawnOnce "emacs --daemon"
+  -- spawnOnce "tmux new-session -s xk -d  bash && tmux send-keys -t xk:1 'sudo xkeysnail /etc/xkeysnail/config.py --devices \"AT Translated Set 2 keyboard\"' C-m"
+  -- spawnOnce "feh --bg-fill --randomize /home/yly/Pictures/Wallpapers/* &"
+  -- spawnOnce "setsid xray -c ~/proxy.json"
+  -- spawnOnce "fcitx5"
+  -- spawnOnce "emacs --daemon"
   spawnOnce "kdeconnect-indicator"
-  spawnOnce "xfce4-panel"
+  -- spawnOnce "xfce4-panel"
   spawnOnce "picom -b --backend glx --experimental-backends"
-  spawnOnce "xmodmap -e \"keycode 135 = Multi_key\""
-  setWMName "LG3D" -}
+  -- spawnOnce "xmodmap -e \"keycode 135 = Multi_key\""
+  setWMName "LG3D"
 
 myWorkspaces = map show [1 .. 5]
 
