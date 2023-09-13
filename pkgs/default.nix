@@ -43,6 +43,10 @@ let
     coreutils
     topgrade
     miller
+    exa
+    nushell
+    dhcp
+
   ];
 in
 {

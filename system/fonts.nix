@@ -12,8 +12,8 @@
       };
       defaultFonts.emoji = [ "Noto Color Emoji" ];
       defaultFonts.monospace = [ "Hack" ];
-      defaultFonts.sansSerif = [ "Source Han Sans" ];
-      defaultFonts.serif = [ "Source Han Serif" ];
+      defaultFonts.sansSerif = [ "Source Han Sans SC" ];
+      defaultFonts.serif = [ "Source Han Serif SC" ];
     };
 
     fontDir.enable = true;

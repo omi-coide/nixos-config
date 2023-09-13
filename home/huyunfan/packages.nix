@@ -30,7 +30,6 @@ let
   development-tools = with pkgs; [
     coq
     python3
-    typst
   ] ++
   (import ./vscode.nix { inherit pkgs; });
   unfree-pro-softwares = with pkgs;[

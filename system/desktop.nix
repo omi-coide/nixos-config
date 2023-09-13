@@ -7,7 +7,8 @@
   };
 
   services.notify-daemon.enable = true;
-
+  services.system-config-printer.enable = true;
+  services.printing.enable = true;
   services.xserver.exportConfiguration = true;
   services.xserver = {
     enable = true;

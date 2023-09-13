@@ -18,6 +18,7 @@ let
 
   ] ++ (with inputs;[
     # agenix.nixosModule
+    nix-ld.nixosModules.nix-ld
     home-manager.nixosModules.home-manager
     vscode-server.nixosModule
   ]) ++ (import ../modules);
