@@ -14,6 +14,7 @@
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
   boot.loader.grub.device = "/dev/sda";
+  boot.loader.grub.default = 2;
   boot.loader.grub.useOSProber = true;
   fileSystems."/" =
     {

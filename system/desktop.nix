@@ -30,16 +30,16 @@
         config = builtins.readFile ./xmonad.hs;
       };
     };
-    displayManager.defaultSession = "kodi";
+    displayManager.defaultSession = "xfce+xmonad";
   };
   services.picom.enable = true;
-  services.xserver.desktopManager.kodi.enable = true;
+  #services.xserver.desktopManager.kodi.enable = true;
   services.xserver.displayManager.autoLogin.enable = true;
   services.xserver.displayManager.autoLogin.user = "yly";
   services.xserver.displayManager.gdm = {
     enable = true;
     autoSuspend = false;
-    autoLogin.delay = 30;
+    autoLogin.delay = 60;
   };
 
   # Define a user account
