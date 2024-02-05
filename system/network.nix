@@ -31,7 +31,7 @@
   };
   services.qbittorrent = {
     enable = true;
-    port = 10080;
+    port = 8080;
     settings = {
       LegalNotice = {
         Accepted = true;
@@ -77,5 +77,40 @@
     enable = true;
     token = (import ../secrets/secrets.nix).duckdns_token;
     domain = "nixlac";
+  };
+  services.samba-wsdd = {
+    # make shares visible for Windows clients
+    enable = true;
+  };
+  services.samba = {
+    enable = true;
+    securityType = "user";
+    extraConfig = ''
+      workgroup = WORKGROUP
+      server string = smbnix
+      netbios name = smbnix
+      security = user 
+      #use sendfile = yes
+      max protocol = smb2
+      min protocol = CORE
+      # note: localhost is the ipv6 localhost ::1
+      hosts allow = 192.168.1. 127.0.0.1 localhost
+      hosts deny = 0.0.0.0/0
+      guest account = yly
+      map to guest = bad user
+      dos charset = GBK
+      unix charset = UTF-8
+    '';
+    shares = {
+      public = {
+        path = "/home/yly/Videos";
+        browseable = "yes";
+        "read only" = "yes";
+        "guest ok" = "yes";
+        "guest only" = "yes";
+        "create mask" = "0644";
+        "directory mask" = "0755";
+      };
+    };
   };
 }

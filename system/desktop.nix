@@ -46,5 +46,6 @@
   users.extraUsers.kodi.isNormalUser = true;
   users.users."kodi".password = "";
   nixpkgs.config.kodi.enableAdvancedLauncher = true;
+  i18n.inputMethod.enabled = "fcitx5";
 
 }
